@@ -1,0 +1,21 @@
+{
+  "name": "receipt-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Telegram receipt bot + Next.js dashboard",
+  "scripts": {
+    "dev": "concurrently -n bot,web -c blue,green \"npm run bot:dev\" \"npm run dashboard:dev\"",
+    "build": "npm run bot:build && npm run dashboard:build",
+    "start": "concurrently -n bot,web -c blue,green \"npm run bot:start\" \"npm run dashboard:start\"",
+    "postinstall": "cd bot && npm install && cd ../dashboard && npm install",
+    "bot:dev": "cd bot && npm run dev",
+    "bot:build": "cd bot && npm run build",
+    "bot:start": "cd bot && npm start",
+    "dashboard:dev": "cd dashboard && npm run dev",
+    "dashboard:build": "cd dashboard && npm run build",
+    "dashboard:start": "cd dashboard && npm start"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
